@@ -1,0 +1,146 @@
+$second-color:#d18f09;
+$block-default:#373739;
+$block-hover:#424447;
+$black-bg:#2c2d2f;
+$font-family:'Cairo', sans-serif;
+$font-color:#FFF;
+$font-color-2:#bcbdbe;
+$logo-bg:#5e5e5e;
+$logo-bg-hover:#CCC;
+body{
+    font-family: $font-family;
+}
+.owl-dots {
+    counter-reset: dots;
+}
+.owl-dot:before {
+    counter-increment:dots;
+    content: counter(dots);
+}
+$c: 100px;
+.ubo-slide{
+    display: block !important;
+    padding-top: 40px;
+    &.owl-loaded{
+        position: relative;
+        .owl-prev,.owl-next,.owl-dots{
+            position: absolute;
+            top: 0;
+            color:$second-color;
+            background-color: $block-default;
+            box-shadow: inset 0px 0px 0px 1px $black-bg;
+            
+        }
+        .owl-prev,.owl-next{
+            display: inline-block;
+                width: #{$c};
+                text-align: center;
+font-size: 0;            
+padding: 13px 5px;       
+        }
+            .owl-prev{
+                left:0;
+                &:after{
+                        content: "\f137";
+                            display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+                }
+            }
+            .owl-next{
+                right:0;
+                  &:after{
+                        content: "\f138";
+                            display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+                }
+            }
+            .owl-dots{
+                width: Calc(100% - #{$c*2});
+                margin: auto;
+                display: inline-block;
+                left: 0;
+                right: 0;
+                text-align: center;
+                .owl-dot{
+                    display: inline-block;
+                        padding: 5px;
+                }
+            }
+    }
+}
+ $a: 100%;
+$b: 3;
+.wrapper-ubo{
+    font-size: 0;
+    background-color: $block-default;
+    box-shadow: inset 0px 0px 0px 1px $black-bg;
+    transition: all 0.5s ease;
+    cursor: pointer;
+*{
+     transition: all 0.5s ease;
+}
+.col-#{$b}ubo{
+    display: inline-block;
+    width: calc(#{$a} / #{$b});
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+   color:$font-color;
+   }
+    .iLogo{
+          width: 25px;
+    height: 25px;
+    background-color: $logo-bg;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow:0px 0px 0px 0px $black-bg;
+    }
+     &:hover{
+        background-color: $block-hover;
+        .iLogo{
+            transform:scale(1.4);
+            box-shadow:0px 0px 5px 0px $black-bg;
+            background-color: $logo-bg-hover;
+        }
+    }
+    h1,h2,h3,h4,h5,p{
+        display: block;
+        word-break: break-all;
+        font-size: 12px;
+        margin: 0;
+        margin-bottom: 5px;
+    } 
+    .status-ubo{
+               background-color: $black-bg;
+    color: $second-color;
+    margin: auto;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    line-height: 1;
+    border: 1px solid $second-color;
+    }
+.score-ubo{
+    font-size: 0;
+    span{
+    width: Calc(100%/2);
+    display: inline-block;
+        font-size: 32px;
+        color: $second-color;
+        font-weight: bold;
+    }
+}
+    p{
+        color: $font-color-2;
+    }
+
+
+}

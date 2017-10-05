@@ -1,7 +1,7 @@
 $second-color:#d18f09;
 $block-default:#373739;
 $block-hover:#424447;
-$black-bg:#2c2d2f;
+$black-bg:#2a2b2d;
 $font-family:'Cairo', sans-serif;
 $font-color:#FFF;
 $font-color-2:#bcbdbe;
@@ -9,6 +9,7 @@ $logo-bg:#5e5e5e;
 $logo-bg-hover:#CCC;
 body{
     font-family: $font-family;
+    background-color: #323335;
 }
 .owl-dots {
     counter-reset: dots;
@@ -17,30 +18,39 @@ body{
     counter-increment:dots;
     content: counter(dots);
 }
-$c: 100px;
+.no-matches{
+    background-color: $block-default;
+    color: $font-color-2;
+    text-align: center;
+    line-height: 9;
+}
+$c: 36px;
+
 .ubo-slide{
     display: block !important;
-    padding-top: 40px;
+     width: Calc(100% - #{$c*2});
+    margin: auto;
     &.owl-loaded{
         position: relative;
         .owl-prev,.owl-next,.owl-dots{
             position: absolute;
             top: 0;
             color:$second-color;
-            background-color: $block-default;
-            box-shadow: inset 0px 0px 0px 1px $black-bg;
+            background-color: $black-bg;
             
         }
         .owl-prev,.owl-next{
-            display: inline-block;
+                display: inline-block;
                 width: #{$c};
                 text-align: center;
-font-size: 0;            
-padding: 13px 5px;       
+                font-size: 0;   
+                top: 0;  
+                    line-height: #{$c*4};  
         }
-            .owl-prev{
-                left:0;
-                &:after{
+        .owl-prev{
+            left: -#{$c};
+            &:after{
+                
                         content: "\f137";
                             display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -51,7 +61,7 @@ padding: 13px 5px;
                 }
             }
             .owl-next{
-                right:0;
+                right: -#{$c};
                   &:after{
                         content: "\f138";
                             display: inline-block;
@@ -62,13 +72,16 @@ padding: 13px 5px;
 
                 }
             }
+           
             .owl-dots{
-                width: Calc(100% - #{$c*2});
+               
                 margin: auto;
                 display: inline-block;
                 left: 0;
                 right: 0;
                 text-align: center;
+                 width: Calc(100% + #{$c*2});
+                 left: -#{$c};
                 .owl-dot{
                     display: inline-block;
                         padding: 5px;
@@ -143,4 +156,60 @@ $b: 3;
     }
 
 
+}
+.ubo-43Ef{
+    .nav-tabs{
+        text-align: center;
+        border-bottom: 1px solid $black-bg;
+            position: relative;
+    }
+    .nav-tabs>li{
+        float: none;
+        margin: -2px;
+        display: inline-block;
+    }
+    .nav-tabs>li>a,
+     .nav-tabs>li>a:hover,
+      .nav-tabs>li>a:focus,
+    .nav-tabs>li.active>a,
+     .nav-tabs>li.active>a:hover,
+      .nav-tabs>li.active>a:focus{
+        border-radius: 0;
+        margin-right: 1px;
+        font-size: 12px;
+         background-color: $black-bg;
+    color: $font-color-2;
+    text-decoration: none;
+    border:0px solid ;
+    border-bottom: 0;
+    padding: 5px 20px;
+    }
+    .nav-tabs>li.active>a,
+        .nav-tabs>li.active>a:hover,
+        .nav-tabs>li.active>a:focus{
+            background-color: $second-color ;
+        color: $block-default;
+        }
+     .nav-tabs>li>a:hover{
+         color: #FFF;
+     }
+    .nav > li.all-matches{
+       position: absolute;
+    left: 0;
+    top: 0;
+        &>a,
+     &>a:hover,
+      &>a:focus,
+    &.active>a,
+     &.active>a:hover,
+      &.active>a:focus{
+          background-color: transparent;
+          color: white;
+          i{
+              font-size: 22px;
+    vertical-align: text-top;
+    margin-right: 5px;
+          }
+      }
+    }
 }

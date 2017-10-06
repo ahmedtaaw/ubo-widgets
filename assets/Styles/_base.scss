@@ -213,3 +213,104 @@ $b: 3;
       }
     }
 }
+
+.more-match{
+    display: none;
+}
+@media (max-width: 600px) {
+    .wrapper-ubo .iLogo{
+        padding: 0;
+    }
+    .wrapper-ubo .score-ubo span{
+        line-height: 1;
+            font-size: 16px
+    }
+     .wrapper-ubo .status-ubo{
+             padding: 4px 5px;
+    font-size: 10px;
+    display: inline-block;
+     }
+    .wrapper-ubo .status-ubo+p{
+        display: inline-block;
+    }
+    .wrapper-ubo h1, .wrapper-ubo h2, .wrapper-ubo h3, .wrapper-ubo h4, .wrapper-ubo h5, .wrapper-ubo p{
+        font-weight: normal;
+    line-height: 1;
+    }
+    .wrapper-ubo{
+        padding: 5px 0;
+    }
+    .ubo-slide{
+        width: 100%;
+    }
+    .ubo-43Ef{
+        padding-bottom: 37px;
+        margin-bottom: 25px;
+        position: relative;
+        .ubo-slide{
+            .item{
+                visibility: hidden;
+                opacity: 0;
+                 height: 0; 
+                  transition: opacity 0.5s ease-out;
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3){
+                    visibility: visible;
+                opacity: 1;
+                 height: auto; 
+                }
+            }
+        }
+        &.show-all{
+             .ubo-slide{
+                .item{
+                     visibility: visible;
+                opacity: 1;
+                 height: auto; 
+                }
+            }
+        }
+        .nav-tabs{
+            position: static;
+            margin-top: 0;
+        }
+         .nav>li.all-matches {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                margin: 0;
+                    top: auto;
+            }
+    }
+    .more-match{
+        background-color:$block-default;
+        border:1px solid  $black-bg;
+        position: absolute;
+        width: 60px;
+        height: 35px;
+        display: block;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        line-height: 38px;
+        cursor: pointer;
+        svg{
+            fill: #e7a70a;
+            width: 15px;
+            height: 15px;
+            transition: all .2s ease-in-out 0s;
+            transform: translate3d(0,0,0);
+           
+        }
+         &.rotate{
+             svg{
+                transform: rotate(180deg);
+                zoom: 1;
+            }
+        }
+        
+    }
+}

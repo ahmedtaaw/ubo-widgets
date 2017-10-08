@@ -97,10 +97,10 @@ $b: 3;
     box-shadow: inset 0px 0px 0px 1px $black-bg;
     transition: all 0.5s ease;
     cursor: pointer;
-*{
-     transition: all 0.5s ease;
-}
-.col-#{$b}ubo{
+        *{
+            transition: all 0.5s ease;
+        }
+    .col-#{$b}ubo{
     display: inline-block;
     width: calc(#{$a} / #{$b});
     font-size: 14px;
@@ -130,7 +130,8 @@ $b: 3;
         font-size: 12px;
         margin: 0;
         margin-bottom: 5px;
-    } 
+    }  
+   
     .status-ubo{
                background-color: $black-bg;
     color: $second-color;
@@ -312,5 +313,22 @@ $b: 3;
             }
         }
         
+    }
+}
+.owl-stage{
+    display: flex;
+    >.owl-item>.item{
+        height: 100%;
+        .wrapper-ubo{
+            height: 100%;
+                display: flex;
+            justify-content: center;
+            align-items: center;
+            >.col-3ubo{
+                >h1{
+                    margin: 0 -25px;
+                }
+            }
+        }
     }
 }

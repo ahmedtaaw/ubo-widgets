@@ -1,15 +1,23 @@
 $second-color:#d18f09;
-$block-default:#373739;
-$block-hover:#424447;
-$black-bg:#2a2b2d;
+$block-default:#f7f7f7;
+$block-hover:#f7f7f7;
+$black-bg:#e2e2e2;
 $font-family:'Cairo', sans-serif;
-$font-color:#FFF;
+$font-color:#000000;
 $font-color-2:#bcbdbe;
+
 $logo-bg:#5e5e5e;
 $logo-bg-hover:#CCC;
 body{
     font-family: $font-family;
     background-color: #FFFFFF;
+    width: 960px;
+    margin: auto;
+}
+.tabblablabla{
+    width: 520px;
+    margin: auto;
+    direction: ltr;
 }
 .owl-dots {
     counter-reset: dots;
@@ -89,73 +97,99 @@ $c: 36px;
             }
     }
 }
+
  $a: 100%;
 $b: 3;
-.wrapper-ubo{
-    font-size: 0;
-    background-color: $block-default;
-    box-shadow: inset 0px 0px 0px 1px $black-bg;
-    transition: all 0.5s ease;
-    cursor: pointer;
-*{
-     transition: all 0.5s ease;
-}
-.col-#{$b}ubo{
-    display: inline-block;
-    width: calc(#{$a} / #{$b});
-    font-size: 14px;
-    text-align: center;
-    vertical-align: middle;
-   color:$font-color;
-   }
-    .iLogo{
-          width: 25px;
-    height: 25px;
-    background-color: $logo-bg;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow:0px 0px 0px 0px $black-bg;
-    }
-     &:hover{
-        background-color: $block-hover;
-        .iLogo{
-            transform:scale(1.4);
-            box-shadow:0px 0px 5px 0px $black-bg;
-            background-color: $logo-bg-hover;
+.match-list{
+    padding:0;
+    margin: 0;
+    list-style: none;
+  
+    .wrapper-ubo{
+        font-size: 0;
+        background-color: $block-default;
+        box-shadow:  0 1px 1px $black-bg;
+        transition: all 0.5s ease;
+        margin-bottom: 10px;
+        padding-top: 25px;
+        padding-bottom: 15px;
+        footer{
+            padding: 10px 25px 0 25px;
+            p{
+                margin: 0;
+                i{
+                    margin-right: 10px;
+                }
+            }
         }
-    }
-    h1,h2,h3,h4,h5,p{
-        display: block;
-        word-break: break-all;
-        font-size: 12px;
-        margin: 0;
-        margin-bottom: 5px;
-    } 
-    .status-ubo{
-               background-color: $black-bg;
-    color: $second-color;
-    margin: auto;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 10px;
-    line-height: 1;
-    border: 1px solid $second-color;
-    }
-.score-ubo{
-    font-size: 0;
-    span{
-    width: Calc(100%/2);
-    display: inline-block;
-        font-size: 32px;
-        color: $second-color;
-        font-weight: bold;
-    }
-}
-    p{
-        color: $font-color-2;
-    }
+        cursor: pointer;
+        *{
+            transition: all 0.5s ease;
+        }
+        .col-#{$b}ubo{
+            display: inline-block;
+            width: calc(#{$a} / #{$b});
+            font-size: 14px;
+            text-align: center;
+            vertical-align: middle;
+        color:$font-color;
+        }
+        .iLogo{
+            width:55px;
+          height:45px;
+            border-radius: 50%;
+            overflow: hidden;
+            clear: both;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        &:hover{
+            background-color: $block-hover;
+            .iLogo{
+               // box-shadow:0px 0px 5px 0px $black-bg;
+                //background-color: $logo-bg-hover;
+            }
+        }
+        h1,h2,h3,h4,h5,p{
+            display: block;
+            word-break: break-all;
+            font-size: 12px;
+            margin: 0;
+            margin-bottom: 5px;
+        } 
+        
+        .score-ubo{
+        font-size: 0;
+            span{
+            width: Calc(100%/3);
+            display: inline-block;
+                font-size: 32px;
+                color: $second-color;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+                .status-ubo{
+                background-color: $second-color;
+                color: #FFF;
+                margin: auto;
+                display: inline-block;
+                padding: 5px 10px;
+                line-height: 1;
+                border: 1px solid $second-color;
+                font-size: 12px;
+                font-weight: normal;
+            }
 
+        }
+        p{
+            color: $font-color-2;
+        }
+        
 
+    }
 }
 .ubo-44Ef{
     * {
@@ -173,7 +207,8 @@ $b: 3;
         clear:both;
         position: relative;
             border-bottom: 1px solid #e9e9e9;
-         
+         margin-bottom: 35px;
+
         .title{
             display: inline-block;
             font-size: 21px;
@@ -197,8 +232,11 @@ $b: 3;
         }
         .head-options{
             float: left;
+                position: relative;
+    top: 10px;
         }
         .option-calendar{
+            position: relative;
             font-size: 32px;
             color: $second-color;
             border:0;
@@ -207,7 +245,23 @@ $b: 3;
             width: auto;
             height: auto;
             vertical-align: middle;
-            padding-bottom: 15px;
+           
+            width: 32px;
+                height: 32px;
+                overflow: hidden;
+                margin-right: 15px;
+            .Zebra_DatePicker_Icon_Wrapper{
+                z-index: 2;
+                opacity: 0;
+
+                cursor: pointer;
+            }
+            i{
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                top:0;
+            }
         }
        
     }
@@ -245,13 +299,18 @@ direction: rtl;
 
     .nav-tabs{
         text-align: center;
-        border-bottom: 1px solid $black-bg;
+        border: 0 solid $black-bg;
             position: relative;
+            padding: 0;
+               
+                  font-size: 0;
     }
     .nav-tabs>li{
         float: none;
-        margin: -2px;
+       margin: 0;
         display: inline-block;
+        width: calc(100%/7);
+         box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
     }
     .nav-tabs>li>a,
      .nav-tabs>li>a:hover,
@@ -260,14 +319,14 @@ direction: rtl;
      .nav-tabs>li.active>a:hover,
       .nav-tabs>li.active>a:focus{
         border-radius: 0;
-        margin-right: 1px;
+        margin: 0;
         font-size: 12px;
-         background-color: $black-bg;
-    color: $font-color-2;
+         background-color: $block-default;
+    color: $font-color;
     text-decoration: none;
     border:0px solid ;
     border-bottom: 0;
-    padding: 5px 20px;
+    padding: 15px 20px;
     }
     .nav-tabs>li.active>a,
         .nav-tabs>li.active>a:hover,
@@ -276,7 +335,7 @@ direction: rtl;
         color: $block-default;
         }
      .nav-tabs>li>a:hover{
-         color: #FFF;
+         background-color: #FFF;
      }
     .nav > li.all-matches{
        position: absolute;
@@ -311,6 +370,51 @@ direction: rtl;
 .more-match{
     display: none;
 }
+button.Zebra_DatePicker_Icon.Zebra_DatePicker_Icon_Inside_Right{
+    overflow: hidden;
+}
+
+.ubo-list-match{ 
+    .title{
+        h1{
+            display: inline-block;
+            font-size: 21px;
+            margin: 0;
+           
+                padding-top: 10px;
+             padding-bottom: 20px;
+             position: relative;
+             &+a.more-details{
+                display: block;
+                float: left;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: $black-bg;
+                font-size: 0;
+                position: relative;
+                top:15px;
+                transition: all 0.2s ease-out;
+                &:hover{
+                    background-color: $second-color;
+                }
+                &:after{
+                        content: "\f104";
+                        font: normal normal normal 14px/1 FontAwesome;
+                        position: absolute;
+                        top:0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                         font-size: 28px;
+                         line-height: 30px;
+                         text-align: center;
+                }
+             }
+        }
+    }
+ }
 @media (max-width: 600px) {
     .wrapper-ubo .iLogo{
         padding: 0;

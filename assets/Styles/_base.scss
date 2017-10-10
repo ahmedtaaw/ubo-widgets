@@ -245,18 +245,16 @@ $b: 3;
             width: auto;
             height: auto;
             vertical-align: middle;
-           
-            width: 32px;
-                height: 32px;
-                overflow: hidden;
-                margin-right: 15px;
-            .Zebra_DatePicker_Icon_Wrapper{
+             margin-right: 15px;
+             width: 32px;
+          .flatpickr {
                 z-index: 2;
                 opacity: 0;
-
+                padding: 0;
                 cursor: pointer;
+                position: relative;
             }
-            i{
+             i{
                 position: absolute;
                 z-index: 1;
                 left: 0;
@@ -370,10 +368,9 @@ direction: rtl;
 .more-match{
     display: none;
 }
-button.Zebra_DatePicker_Icon.Zebra_DatePicker_Icon_Inside_Right{
-    overflow: hidden;
+.flatpickr-calendar{
+    font-family: sans-serif;
 }
-
 .ubo-list-match{ 
     .title{
         h1{

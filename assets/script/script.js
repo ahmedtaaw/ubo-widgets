@@ -18,7 +18,14 @@ $(document).ready(function () {
         items: 7
     });*/
     let pickerlinkTodaysdate=new Date();
-    $('.datepicker').Zebra_DatePicker();
+    $('.flatpickr').flatpickr({
+            disable: [
+                {
+                    from: "2017-10-08",
+                    to: "2017-10-14"
+                }
+            ]
+        });
 
 
 

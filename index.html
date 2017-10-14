@@ -283,21 +283,27 @@
   <script src="/node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
 
   <script>
+    let masterContainer = $('.ubo-43Ef');
     $(document).ready(function () {
       let togglebuilddestroy = true;
+      destroySlide();
       buildSlide();
-      $(window).resize(function () {
+      masterContainer.resize(function () {
         destroySlide();
         buildSlide();
       });
     });
     function destroySlide() {
-      if ($(window).width() < 600) {
+      if (masterContainer.width() < 600) {
+        console.log("Destroy: " + masterContainer.width());
+        masterContainer.addClass('container-xs');
         $('.ubo-slide').owlCarousel('destroy');
       }
     }
     function buildSlide() {
-      if ($(window).width() >= 600) {
+      if (masterContainer.width() >= 600) {
+        console.log("Build: " + masterContainer.width());
+        masterContainer.removeClass('container-xs');
         $('.ubo-slide').owlCarousel({
           margin: 0,
           nav: true,
@@ -320,9 +326,9 @@
       $('.owl-next').css('height', thisheight);
       $('.no-matches').css('height', thisheight);
     }
-    $( ".more-match" ).click(function() {
-      $( this ).toggleClass( "rotate" );
-      $( '.ubo-43Ef' ).toggleClass( "show-all" );
+    $(".more-match").click(function () {
+      $(this).toggleClass("rotate");
+      $('.ubo-43Ef').toggleClass("show-all");
     });
   </script>
 </body>

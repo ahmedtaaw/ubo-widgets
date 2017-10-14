@@ -7,9 +7,11 @@ $font-color:#FFF;
 $font-color-2:#bcbdbe;
 $logo-bg:#5e5e5e;
 $logo-bg-hover:#CCC;
-body{
+.ubo-43Ef{
     font-family: $font-family;
     background-color: #323335;
+    width: 700px;
+    margin: auto
 }
 .owl-dots {
     counter-reset: dots;
@@ -218,7 +220,7 @@ $b: 3;
 .more-match{
     display: none;
 }
-@media (max-width: 600px) {
+.container-xs {
     .wrapper-ubo .iLogo{
         padding: 0;
     }

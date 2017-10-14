@@ -8,7 +8,7 @@ var csswring = require('csswring')
 
 gulp.task('styles', function () {
 	var mypostcss = [
-		csswring,
+		//csswring,
 		autoprefixer({ browsers: ['last 4 version'] })
 	];
 	return gulp.src('./assets/Styles/main.scss')

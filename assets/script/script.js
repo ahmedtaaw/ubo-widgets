@@ -1,9 +1,14 @@
-let daynumber, day, month, year, weekday;
-year = new Date().getFullYear();
-daynumber = new Date().getDate();
-weekday = new Date().getDay();
-let tomorrowweekday = new Date();
-let tomorrowdaynumber = new Date();
+////issue days after day one must be seted according to date 1
+////not but adding 1 or negative 1
+
+
+let  day, month;
+let monthnumber = new Date().getMonth();
+let daynumber = new Date().getDate();
+let weekday = new Date().getDay();
+let _tomorrowweekday = new Date();
+let _tomorrowdaynumber = new Date();
+let _monththis=new Date();
 let weekArray = [];
 let writeweek = [];
 let datesdiffrence;
@@ -29,10 +34,15 @@ $(document).ready(function () {
             }
         ],*/
         onChange: function (dateObj, dateStr) {
-            let currenttime = new Date().getTime();
+            let currenttime =new Date();
+            currenttime.setDate(daynumber);
+            currenttime.setMonth(monthnumber);
+            currenttime = currenttime.getTime();
             let selectedtime = dateObj[0].getTime();
             datesdiffrence = Math.round((selectedtime - currenttime) / (1000 * 60 * 60 * 24)) + 1;
+            setNewDate_Datepicker(dateObj[0].getDate(),dateObj[0].getDay(),dateObj[0].getMonth());
             editActive(datesdiffrence);
+            
         }
     });
 
@@ -40,34 +50,55 @@ $(document).ready(function () {
 
 });
 function editActive(ev) {
-    if (ev >= -2 && ev <= 4) {
+   if (ev >= 0 && ev <= 6) {
+       console.log(ev);
+       console.log(diff);
         $('.ubo-44Ef .nav-tabs li').removeClass('active');
         $('.ubo-44Ef .nav-tabs li').eq(ev + diff).addClass('active');
     } else {
-        alert("FIRE LOADING the PAGE");
+        //if the date coming from the datepicker is
+        //out of range of the filter
+        //distroy filter and build it from scratch
+        $('.tabs-carousel li').remove();
+        writetabs(weekArray);
+        //console.log(weekArray);
+        console.log("fire your function that Load Data ya developer ya gamel ;)")
     }
-
+    
 }
 function writetabs(ev) {
     let tabCarousel = $('.tabs-carousel');
     for (let [index, value] of ev.entries()) {
-        if (index == 2) {
+        if (index == 0) {
             tabCarousel.append(`<li role="presentation" class="active"><a href="#tab` + index + `" aria-controls="tab` + index + `" role="tab" data-toggle="tab" aria-expanded="true">` + value + `</a></li>`);
         } else {
             tabCarousel.append(`<li role="presentation"><a href="#tab` + index + `" aria-controls="tab` + index + `" role="tab" data-toggle="tab">` + value + `</a></li>`);
         }
     }
 }
+function setNewDate_Datepicker(d,dw,m){
+    weekArray=[];
+    monthnumber=m;
+    daynumber=d;
+    weekday=dw;
+    for (let i = 0; i < 7; i++) {
+        _tomorrowweekday.setDate(weekday + i);
+        _tomorrowdaynumber.setDate(daynumber+i);
+        day5week();
+    }
+    //console.log(weekArray);
+   //return weekArray;
+}
 function DaysAfterBeforeToday() {
-    for (let i = -1; i < 6; i++) {
-        tomorrowweekday.setDate(weekday + i);
-        tomorrowdaynumber.setDate(daynumber + (i - 1));
+    for (let i = 0; i < 7; i++) {
+        _tomorrowweekday.setDate(weekday + i);
+        _tomorrowdaynumber.setDate(daynumber+i);
         day5week();
     }
     return weekArray;
 }
 function day5week() {
-    switch (new Date().getMonth()) {
+    switch (monthnumber) {
         case 0:
             month = "يناير";
             break;
@@ -106,7 +137,7 @@ function day5week() {
             break;
 
     }
-    switch (tomorrowweekday.getDay()) {
+    switch (_tomorrowweekday.getDay()) {
         case 0:
             day = "الأحد";
             break;
@@ -129,7 +160,7 @@ function day5week() {
             day = "السبت";
     }
 
-    weekArray.push((day + " " + tomorrowdaynumber.getDate() + " " + month));
+    weekArray.push((day + " " + _tomorrowdaynumber.getDate() + " " + month));
 
 }
 

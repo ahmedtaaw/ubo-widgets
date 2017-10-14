@@ -295,14 +295,12 @@
     });
     function destroySlide() {
       if (masterContainer.width() < 600) {
-        console.log("Destroy: " + masterContainer.width());
         masterContainer.addClass('container-xs');
         $('.ubo-slide').owlCarousel('destroy');
       }
     }
     function buildSlide() {
       if (masterContainer.width() >= 600) {
-        console.log("Build: " + masterContainer.width());
         masterContainer.removeClass('container-xs');
         $('.ubo-slide').owlCarousel({
           margin: 0,

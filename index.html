@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="ubo-43Ef">
+  <div class="ubo-43Ef container-xs ">
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
@@ -279,51 +279,15 @@
 
 
   <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
   <script src="/node_modules/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
 
   <script>
     let masterContainer = $('.ubo-43Ef');
     $(document).ready(function () {
-      let togglebuilddestroy = true;
-      destroySlide();
-      buildSlide();
-      masterContainer.resize(function () {
-        destroySlide();
-        buildSlide();
-      });
+      intialEdits();
     });
-    function destroySlide() {
-      if (masterContainer.width() < 600) {
-        masterContainer.addClass('container-xs');
-        $('.ubo-slide').owlCarousel('destroy');
-      }
-    }
-    function buildSlide() {
-      if (masterContainer.width() >= 600) {
-        masterContainer.removeClass('container-xs');
-        $('.ubo-slide').owlCarousel({
-          margin: 0,
-          nav: true,
-          dots: false,
-          responsive: {
-            768: {
-              items: 2
-            },
-            1024: {
-              items: 3
-            }
-          },
-          onInitialized: intialEdits
-        });
-      }
-    }
-    function intialEdits() {
-      let thisheight = $('.owl-stage-outer').outerHeight();
-      $('.owl-prev').css('height', thisheight);
-      $('.owl-next').css('height', thisheight);
-      $('.no-matches').css('height', thisheight);
-    }
+   
+   
     $(".more-match").click(function () {
       $(this).toggleClass("rotate");
       $('.ubo-43Ef').toggleClass("show-all");

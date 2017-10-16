@@ -10,7 +10,6 @@ $logo-bg-hover:#CCC;
 .ubo-43Ef{
     font-family: $font-family;
     background-color: #323335;
-    width: 700px;
     margin: auto
 }
 .owl-dots {
@@ -128,7 +127,7 @@ $b: 3;
     }
     h1,h2,h3,h4,h5,p{
         display: block;
-        word-break: break-all;
+        word-break: break-word;
         font-size: 12px;
         margin: 0;
         margin-bottom: 5px;
@@ -246,7 +245,7 @@ $b: 3;
     .ubo-slide{
         width: 100%;
     }
-    .ubo-43Ef{
+    &.ubo-43Ef{
         padding-bottom: 37px;
         margin-bottom: 25px;
         position: relative;

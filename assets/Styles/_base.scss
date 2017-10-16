@@ -449,10 +449,14 @@ direction: rtl;
                   right: 0;
                   text-align: right;
             }
+                .option-calendar{
+                    float: right;
+                      margin: 5px;
+                }
                 .head-options{
                     float: none;
                      margin: auto;
-                         display: inline-block;
+                         display: block;
                 }
     }
     &.ubo-44Ef .match-list .wrapper-ubo .score-ubo{

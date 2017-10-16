@@ -4,16 +4,14 @@ $block-hover:#f7f7f7;
 $black-bg:#e2e2e2;
 $font-family:'Cairo', sans-serif;
 $font-color:#000000;
-$font-color-2:#bcbdbe;
+$font-color-2:#565656;
 
 $logo-bg:#5e5e5e;
 $logo-bg-hover:#CCC;
-body{
+
+.ubo-44Ef{
     font-family: $font-family;
-    background-color: #FFFFFF;
-    width: 960px;
     margin: auto;
-}
 .tabblablabla{
     width: 520px;
     margin: auto;
@@ -155,7 +153,7 @@ $b: 3;
         }
         h1,h2,h3,h4,h5,p{
             display: block;
-            word-break: break-all;
+            word-break: break-word;
             font-size: 12px;
             margin: 0;
             margin-bottom: 5px;
@@ -191,10 +189,10 @@ $b: 3;
 
     }
 }
-.ubo-44Ef{
+
     * {
     box-sizing: border-box;
-}
+    }
     direction:rtl;
     .clearfix{
         &:before,&:after{
@@ -233,7 +231,7 @@ $b: 3;
         .head-options{
             float: left;
                 position: relative;
-    top: 10px;
+         top: 10px;
         }
         .option-calendar{
             position: relative;
@@ -266,34 +264,34 @@ $b: 3;
     .select2-container{
         background-color: #fbfbfb;
       border: 1px solid #e8e8e8;
-      border-radius: 0;
-         text-align: right;
-direction: rtl;
-    width: auto !important;
-    font-size: 12px;
-    display: inline-block;
-    vertical-align: middle;
+            border-radius: 0;
+                text-align: right;
+        direction: rtl;
+            width: auto !important;
+            font-size: 12px;
+            display: inline-block;
+            vertical-align: middle;
     }
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    height: 26px;
-    position: absolute;
-    top: 0;
-    right: auto;
-    width: 20px;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-}
-    .select2-container--default .select2-selection--single{
-      background-color: transparent;
-      border: 0 solid #e8e8e8;
-      border-radius: 0;
-      padding: 0;
-      height: auto;
-    }
-.select2-container .select2-selection--single .select2-selection__rendered{
-  padding: 10px 10px 10px 30px;
-}
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 26px;
+            position: absolute;
+            top: 0;
+            right: auto;
+            width: 20px;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .select2-container--default .select2-selection--single{
+        background-color: transparent;
+        border: 0 solid #e8e8e8;
+        border-radius: 0;
+        padding: 0;
+        height: auto;
+        }
+        .select2-container .select2-selection--single .select2-selection__rendered{
+        padding: 10px 10px 10px 30px;
+        }
 
     .nav-tabs{
         text-align: center;
@@ -355,7 +353,7 @@ direction: rtl;
           }
       }
     }
-}
+
 .select2-dropdown{
 font-size: 12px;
 text-align: right;
@@ -413,7 +411,8 @@ direction: rtl;
         }
     }
  }
-@media (max-width: 600px) {
+}
+.container-xs {
     .wrapper-ubo .iLogo{
         padding: 0;
     }
@@ -439,7 +438,40 @@ direction: rtl;
     .ubo-slide{
         width: 100%;
     }
-    .ubo-44Ef{
+    &.ubo-44Ef header {
+        position: relative;
+            margin-bottom: 15px;
+             padding-bottom: 75px;
+             text-align: center;
+             .title{
+                position: absolute; 
+                    bottom: 0;
+                  right: 0;
+                  text-align: right;
+            }
+                .head-options{
+                    float: none;
+                     margin: auto;
+                         display: inline-block;
+                }
+    }
+    &.ubo-44Ef .match-list .wrapper-ubo .score-ubo{
+        position: relative;
+            padding-bottom: 15px;
+        span{
+        width: auto;
+            padding: 5px 10px;
+            &:nth-child(2){
+               position: absolute;
+                padding: 2px 6px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+    &.ubo-44Ef{
         padding-bottom: 37px;
         margin-bottom: 25px;
         position: relative;
